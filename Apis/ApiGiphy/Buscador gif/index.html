@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estilos.css">
+    <title>Gif</title>
+</head>
+<body>
+    <div id="gif-wrap"></div>
+    <div id="gif-logo"><img src="https://storage.googleapis.com/chydlx/codepen/random-gif-generator/giphy-logo.gif" />
+    <input type = "search" id ="search">
+    <input type = "submit" value="Buscar" id= "btn">
+    <video id ="gif" autoplay="true" loop="true"></videoid>
+    <script src="./func.js"></script>
+
+    <script>
+        document.getElementById('btn').addEventListener('click',function(){
+            var keyword = document.getElementById('search').value;
+            Giphy.getUrlAsync(keyword,function(videoURL){
+                document.getElementById('gif').src = videoURL;
+            })
+        });
+    </script>
+</body>
+</html>
